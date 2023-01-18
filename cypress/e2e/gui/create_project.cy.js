@@ -8,7 +8,7 @@ describe('Create_Project', () => {
 
   it('successfully create', ()=>{
 
-    const especs_project = {
+    const especs_project = {  
       name: `project-${faker.datatype.uuid()}`,
       description:faker.random.words(5), 
     }
