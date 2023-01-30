@@ -45,3 +45,15 @@ Cypress.Commands.add("create_project", especs_project =>{
   cy.get('#blank-project-pane > #new_project > .btn-success').click()
 
 })
+
+
+Cypress.Commands.add("create_inssue", especs_inssue =>{
+  cy.visit('dashboard/projects')
+
+  cy.contains(especs_inssue.especs_project.name).click()
+  cy.get(".shortcuts-issues").click()
+  cy.get("#new_issue_link").click()
+  cy.get('#issue_title').should("be.visible").type(especs_inssue.name)
+  cy.get('#issue_description').should("be.visible").type(especs_inssue.description)
+  cy.get('.append-right-10 > .btn').should("be.visible").click()
+})
