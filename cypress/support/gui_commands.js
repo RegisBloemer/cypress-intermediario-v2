@@ -57,3 +57,10 @@ Cypress.Commands.add("create_inssue", especs_inssue =>{
   cy.get('#issue_description').should("be.visible").type(especs_inssue.description)
   cy.get('.append-right-10 > .btn').should("be.visible").click()
 })
+
+
+Cypress.Commands.add("gui_setLabelOnIssue", (label) => {
+  cy.get('.labels > .title > .js-sidebar-dropdown-toggle').click()
+  cy.contains(label.name).should("be.visible").click()
+  cy.get('.dropdown-page-one > .dropdown-title > .dropdown-title-button > .fa').click()
+})
