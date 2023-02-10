@@ -64,3 +64,8 @@ Cypress.Commands.add("gui_setLabelOnIssue", (label) => {
   cy.contains(label.name).should("be.visible").click()
   cy.get('.dropdown-page-one > .dropdown-title > .dropdown-title-button > .fa').click()
 })
+
+Cypress.Commands.add('gui_setMilestoneOnIssue', milestone => {
+  cy.get('.block.milestone .edit-link').click()
+  cy.contains(milestone.title).click()
+})
